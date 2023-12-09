@@ -32,7 +32,7 @@ func ConnectDB() {
 	}
 
 	log.Println("DB connected!")
-	errMig := db.AutoMigrate(models.Note{})
+	errMig := db.AutoMigrate(&models.Note{})
 	if errMig != nil {
 		log.Fatalln("Error Occured on migrating.\n", errMig)
 	}
